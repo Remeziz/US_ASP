@@ -19,7 +19,7 @@ select
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at
 from {{ ref('na_get_fba_fulfillmen_1_replacement_data_ab1') }}
--- us_get_fba_fulfillmen__ment_replacement_data
+-- na_get_fba_fulfillmen__ment_replacement_data
 where 1 = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
 
