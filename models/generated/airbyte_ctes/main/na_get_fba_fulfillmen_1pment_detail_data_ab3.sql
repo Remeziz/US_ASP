@@ -4,7 +4,7 @@
     tags = [ "top-level-intermediate" ]
 ) }}
 -- SQL model to build a hash column based on the values of this record
--- depends_on: {{ ref('us_get_fba_fulfillmen_1pment_detail_data_ab2') }}
+-- depends_on: {{ ref('na_get_fba_fulfillmen_1pment_detail_data_ab2') }}
 select
     {{ dbt_utils.surrogate_key([
         'carrier',
@@ -16,10 +16,10 @@ select
         adapter.quote('request-date'),
         adapter.quote('shipped-quantity'),
         adapter.quote('tracking-number'),
-    ]) }} as _airbyte_us_get_fba_f__nt_detail_data_hashid,
+    ]) }} as _airbyte_na_get_fba_f__nt_detail_data_hashid,
     tmp.*
-from {{ ref('us_get_fba_fulfillmen_1pment_detail_data_ab2') }} tmp
--- us_get_fba_fulfillmen___shipment_detail_data
+from {{ ref('na_get_fba_fulfillmen_1pment_detail_data_ab2') }} tmp
+-- na_get_fba_fulfillmen___shipment_detail_data
 where 1 = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
 
