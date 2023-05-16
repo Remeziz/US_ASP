@@ -50,8 +50,5 @@ vars:
     na_get_fba_fulfillmen_1pment_detail_data_ab2: main._airbyte_raw_na_get_f___shipment_detail_data
     na_get_fba_fulfillmen_1pment_detail_data_ab3: main._airbyte_raw_na_get_f___shipment_detail_data
     na_get_fba_fulfillmen___shipment_detail_data: main._airbyte_raw_na_get_f___shipment_detail_data
-    na_get_fba_fulfillmen_1_replacement_data_ab1: main._airbyte_raw_na_get_f__ment_replacement_data
-    na_get_fba_fulfillmen_1_replacement_data_ab2: main._airbyte_raw_na_get_f__ment_replacement_data
-    na_get_fba_fulfillmen_1_replacement_data_ab3: main._airbyte_raw_na_get_f__ment_replacement_data
-    na_get_fba_fulfillmen__ment_replacement_data: main._airbyte_raw_na_get_f__ment_replacement_data
+ 
     
