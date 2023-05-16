@@ -4,7 +4,7 @@
     tags = [ "top-level" ]
 ) }}
 -- Final base SQL model
--- depends_on: {{ ref('us_get_fba_fulfillmen_1_replacement_data_ab3') }}
+-- depends_on: {{ ref('na_get_fba_fulfillmen_1_replacement_data_ab3') }}
 select
     quantity,
     {{ adapter.quote('original-amazon-order-id') }},
@@ -18,9 +18,9 @@ select
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
-    _airbyte_us_get_fba_f__placement_data_hashid
-from {{ ref('us_get_fba_fulfillmen_1_replacement_data_ab3') }}
--- us_get_fba_fulfillmen__ment_replacement_data from {{ source('main', '_airbyte_raw_us_get_f__ment_replacement_data') }}
+    _airbyte_na_get_fba_f__placement_data_hashid
+from {{ ref('na_get_fba_fulfillmen_1_replacement_data_ab3') }}
+-- na_get_fba_fulfillmen__ment_replacement_data from {{ source('main', '_airbyte_raw_na_get_f__ment_replacement_data') }}
 where 1 = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
 
