@@ -4,7 +4,7 @@
     tags = [ "top-level-intermediate" ]
 ) }}
 -- SQL model to parse JSON blob stored in a single column and extract into separated field columns as described by the JSON Schema
--- depends_on: {{ source('main', '_airbyte_raw_us_get_f__ment_replacement_data') }}
+-- depends_on: {{ source('main', '_airbyte_raw_na_get_f__ment_replacement_data') }}
 select
     {{ json_extract_scalar('_airbyte_data', ['quantity'], ['quantity']) }} as quantity,
     {{ json_extract_scalar('_airbyte_data', ['original-amazon-order-id'], ['original-amazon-order-id']) }} as {{ adapter.quote('original-amazon-order-id') }},
@@ -18,7 +18,7 @@ select
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at
-from {{ source('main', '_airbyte_raw_us_get_f__ment_replacement_data') }} as table_alias
+from {{ source('main', '_airbyte_raw_na_get_f__ment_replacement_data') }} as table_alias
 -- us_get_fba_fulfillmen__ment_replacement_data
 where 1 = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
